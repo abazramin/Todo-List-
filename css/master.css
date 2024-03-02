@@ -1,3 +1,11 @@
+:root {
+    --main-color: #009688;
+    --secound-color: #87A922;
+    --text-color: #fcdc2a;
+    --primary-color: #f7f6bb;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,7 +13,8 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: var(--primary-color);
 }
 
 p {
@@ -17,7 +26,6 @@ p {
     position: relative;
     width: 600px;
     margin: 30px auto 0;
-    background-color: #f6f6f6;
 }
 
 @media (max-width: 540px) {
@@ -33,7 +41,8 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #9c9c9c;
+    background-color: var(--text-color);
+    color: white;
 }
 
 .fullTimeAndDate {
@@ -60,11 +69,12 @@ p {
 
 .heading {
     width: 100%;
-    background-color: #009688;
+    background-color: var(--main-color);
     display: inline-block;
     padding: 10px 15px;
     border: none;
     color: white;
+    margin-bottom: 20px;
 }
 
 .heading h3 {
@@ -78,7 +88,7 @@ p {
 
 .todo-container .add-task {
     padding: 15px;
-    background-color: #009688;
+    background-color: var(--primary-color);
     position: relative;
 }
 
@@ -86,9 +96,8 @@ p {
     display: inline-block;
     padding: 10px 15px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.2);
-    width: calc(100% - 40px);
-    color: white;
+    width: calc(100% - 35px);
+    color: var(--main-color);
     font-size: 20px;
 }
 
@@ -107,7 +116,7 @@ p {
     color: #009688;
     cursor: pointer;
     font-size: 38px;
-    margin-left: 5px;
+    margin-right: 5px;
     transition: transform 0.5s;
 }
 
@@ -157,6 +166,7 @@ p {
     overflow: hidden;
     margin: 10px auto;
     width: 600px;
+    height: 10vh;
     font-size: 12px;
 }
 
@@ -169,6 +179,7 @@ p {
         position: fixed;
         right: -350px;
     }
+
 }
 
 .task-stats .task-count {
@@ -204,9 +215,6 @@ p {
 
 .customeTasks {
     background-color: #009688;
-    position: fixed;
-    bottom: 0;
-    left: 540px;
     width: 620px;
     display: flex;
     justify-content: space-between;
@@ -226,10 +234,15 @@ p {
 
 .customeTasks span {
     color: #fff;
-    padding: 1px 5px;
-    font-size: 20px;
+    padding: 20px;
     border-radius: 6px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.customeTasks span i {
+    color: white;
+    font-size: 24px;
 }
 
 .customeTasks #delete {

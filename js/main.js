@@ -97,6 +97,7 @@ theAddButton.onclick = function () {
 
         // Add The Task To The Container 
         tasksContainer.appendChild(mainSpan);
+        // 
 
         // Empty The Input
         theInput.value = '';
@@ -113,6 +114,10 @@ theAddButton.onclick = function () {
     }
 
 };
+
+
+
+
 document.addEventListener('click', function (e) {
 
     // Delete Task
@@ -136,14 +141,20 @@ document.addEventListener('click', function (e) {
 
     }
 
-    finished.addEventListener("click", () => {
-        console.log("finsh success");
-        // todo: create function for finshed all tasks
-    })
     // Calculate Tasks
     CalculateTasks();
 });
 
+//
+let finshed = document.getElementById("finsh");
+finished.onclick = () => {
+    let arr = Array.from(document.querySelectorAll(".task-box"));
+    for (i = 0; i <= arr.length; i++) {
+        if (arr[i].classList.contains("task-box")) {
+            arr[i].classList.add("finished")
+        }
+    }
+}
 
 // Function To Create No Tasks Message 
 function createNoTasks() {
